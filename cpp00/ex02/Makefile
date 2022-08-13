@@ -1,13 +1,14 @@
-NAME = phonebook
+NAME = run_tests
 
-SRCS = Contact.cpp PhoneBook.cpp Main.cpp
+SRCS = Account.cpp tests.cpp
 
-HEADER = Contact.hpp PhoneBook.hpp
+HEADER = Account.hpp
 CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
+BORRAR = ${NAME:=.d}
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -15,6 +16,7 @@ DEPS = ${SRCS:.cpp=.d}
 ${NAME}: ${OBJS}
 		@echo "\033[36m"--Compilando--"\033[0m ";
 		${CC} ${CFLAGS} ${SRCS} -o ${NAME}
+		${RM} ${BORRAR}
 		@clear
 
 all:	${NAME}
