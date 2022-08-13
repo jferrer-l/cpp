@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:22:54 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/11 19:57:56 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/08/13 21:00:27 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 Contact::Contact(std::string nfirst_name, std::string nlast_name, std::string nnickname, std::string nphone_number, std::string ndarkest_secret)
 {
-	printf("entro1\n");
 	first_name = nfirst_name;
 	last_name = nlast_name;
 	nickname = nnickname;
@@ -28,7 +27,6 @@ Contact::Contact(std::string nfirst_name, std::string nlast_name, std::string nn
 
 Contact::Contact(void)
 {
-	printf("entro2\n");
 	first_name = "";
 	last_name = "";
 	nickname = "";

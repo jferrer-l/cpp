@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:51:06 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/11 22:44:19 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/08/13 21:00:14 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ static bool	is_digits(const std::string &str);
 static void	new_contact(PhoneBook *p_list);
 static void	search_contacts(PhoneBook *p_list);
 
-int main(int argc, char **argv)
+int main(void)
 {
 	std::string	input = "";
 	PhoneBook p_list;
 
+	std::cout << "Avaible commands: ADD, SEARCH, EXIT." << std::endl;
 	while (input != "EXIT")
 	{
 		std::cout << '>';
@@ -31,7 +32,6 @@ int main(int argc, char **argv)
 			new_contact(&p_list);
 		else if (input == "SEARCH")
 			search_contacts(&p_list);
-		std::cout << input;
 	}
 }
 
@@ -68,6 +68,11 @@ static void	search_contacts(PhoneBook *p_list)
 	int		j;
 	int		input = 0;
 	Contact	*temp = (*p_list).getList();
+	if (p_list->getSize() == 0)
+	{
+		std::cout << "Phonebook is empty, add some contacts to acces it." << std::endl;
+		return;
+	}
 	std::cout << "*********************************************" << std::endl;
 	for (int i = 1; i <= (*p_list).getSize(); i++)
 	{
