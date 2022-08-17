@@ -1,6 +1,6 @@
-NAME = allocate_zombies
+NAME = create_zombies
 
-SRCS = main.cpp zombieHorde.cpp Zombie.cpp
+SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 HEADER = Zombie.hpp
 CC = c++

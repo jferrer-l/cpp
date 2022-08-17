@@ -1,8 +1,8 @@
-NAME = allocate_zombies
+NAME = unneceary_violence
 
-SRCS = main.cpp zombieHorde.cpp Zombie.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
-HEADER = Zombie.hpp
+HEADER = HumanA.hpp HumanB.hpp Weapon.hpp
 CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD

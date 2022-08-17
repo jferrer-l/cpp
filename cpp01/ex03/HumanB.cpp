@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 00:19:37 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/17 02:30:49 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/08/17 02:51:41 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/08/17 03:33:16 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <iostream>
+#include "HumanB.hpp"
+#include "iostream"
 
-Zombie::Zombie(){}
+HumanB::HumanB(){}
+HumanB::~HumanB(){}
 
-Zombie::Zombie(std::string name)
+HumanB::HumanB(std::string name)
 {
 	this->name = name;
 }
 
-Zombie::~Zombie()
+void HumanB::setWeapon(Weapon weapon)
 {
-	std::cout << name << " has been destroyed" << std::endl;
+	this->weapon = weapon;
 }
 
-
-void	Zombie::announce(void)
+void HumanB::attack()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }
