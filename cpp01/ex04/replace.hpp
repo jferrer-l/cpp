@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 02:51:59 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/17 20:27:26 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/09/09 17:23:11 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/09/09 18:44:55 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-# define WEAPON_H
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
+#include <iostream>
+#include <fstream>
 #include <string>
+#include <ios>
 
-class Weapon
-{
-private:
-	std::string type;
-
-public:
-	Weapon();
-	~Weapon();
-
-	Weapon(std::string weapon);
-
-	std::string	&getType();
-	void		setType(std::string newtype);
-};
+std::string	reader(std::string filename);
 
 #endif

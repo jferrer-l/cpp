@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:51:38 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/17 03:32:16 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/08/17 20:16:23 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 class HumanA
 {
 private:
-	Weapon		weapon;
 	std::string	name;
+	Weapon		&weapon;
 
 public:
-	HumanA();
 	~HumanA();
 
-	HumanA(std::string name, Weapon weapon);
+	HumanA(std::string name, Weapon &weapon);
 
 	void	attack();
 };

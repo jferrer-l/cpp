@@ -6,13 +6,14 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:51:52 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/17 03:39:23 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/08/17 21:08:56 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include <iostream>
 
 int main()
 {

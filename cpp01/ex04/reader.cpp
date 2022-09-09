@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   reader.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 02:51:59 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/17 20:27:26 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/09/09 18:57:28 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/09/09 18:57:43 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-# define WEAPON_H
+#include "replace.hpp"
 
-#include <string>
-
-class Weapon
+std::string	reader(std::string filename)
 {
-private:
-	std::string type;
+	std::ifstream	readfile;
+	std::string		str;
+	std::string		buff;
 
-public:
-	Weapon();
-	~Weapon();
-
-	Weapon(std::string weapon);
-
-	std::string	&getType();
-	void		setType(std::string newtype);
-};
-
-#endif
+	readfile.open(filename, std::fstream::in);
+	if (!readfile.is_open())
+	{
+		std::cout << "Failed to open the file" << std::endl;
+		exit(1);
+	}
+	while (!readfile.eof())
+	{
+		std::getline(readfile, buff);
+		str += buff;
+		if (!readfile.eof())
+			str += '\n';
+	}
+	return str;
+}

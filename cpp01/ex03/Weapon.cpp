@@ -6,28 +6,28 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:51:56 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/17 03:36:43 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/08/17 21:07:57 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+#include <iostream>
 
 Weapon::Weapon(){}
 
-Weapon::Weapon(std::string weapon)
+Weapon::Weapon(std::string weapon_name)
 {
-	this->type = weapon;
+	this->type = weapon_name;
 }
 
 Weapon::~Weapon(){}
 
 std::string	&Weapon::getType()
 {
-	std::string &ref = type;
-	return ref;
+	return type;
 }
 
 void		Weapon::setType(std::string newtype)
 {
-	this->type = newtype;
+	type = newtype;
 }
