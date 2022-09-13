@@ -1,11 +1,11 @@
 NAME = exec
 
-SRCS = main.cpp Fixed.cpp overloads.cpp Point.cpp bsp.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
-HEADER = Fixed.hpp Point.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp
 CC = c++
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -MMD
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
 BORRAR = ${NAME:=.d}

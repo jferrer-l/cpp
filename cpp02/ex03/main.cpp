@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:55:09 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/12 17:23:32 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:36:18 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 
 int main( void ) {
+
 {
 	std::cout << "Test 1: (Point inside the triangle)\n";
 	Point p1(1.0f, 1.0f);
