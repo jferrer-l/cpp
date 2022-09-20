@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:55:09 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/11 00:33:10 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:04:48 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main( void ) {
 Fixed a;
+// const Fixed* meta = new Fixed();
+// (void)meta;
 Fixed const b( 10 );
 Fixed const c( 42.42f );
 Fixed const d( b );
