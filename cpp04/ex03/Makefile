@@ -1,11 +1,11 @@
 NAME = exec
 
-SRCS = main.cpp Dog.cpp Cat.cpp AAnimal.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Charcter.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-HEADER = Dog.hpp Cat.hpp AAnimal.hpp Brain.hpp
-CC = c++
+HEADER = AMateria.hpp Charcter.hpp Cure.hpp Ice.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
+CC = clang++
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
+CFLAGS = -W -Wall -Werror -std=c++98 -MMD
 OBJS = ${SRCS:.cpp=.o}
 DEPS = ${SRCS:.cpp=.d}
 BORRAR = ${NAME:=.d}

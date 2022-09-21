@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 00:43:04 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/21 05:24:38 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/09/21 04:52:34 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/09/21 05:20:23 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
+
+#include <iostream>
 #include "AMateria.hpp"
 
-AMateria::AMateria(const AMateria& copy): type(copy.type) {}
-
-AMateria::AMateria(std::string const & type): type(type) {}
-
-AMateria::~AMateria() {}
-
-AMateria & AMateria::operator=(const AMateria& op)
+class IMateriaSource
 {
-	if (this == &op)
-		return (*this);
-	//this->type = op.type;
-	return (*this);
-}
+public:
+virtual ~IMateriaSource() {};
+virtual void learnMateria(AMateria*) = 0;
+virtual AMateria* createMateria(std::string const & type) = 0;
+};
+
+#endif
