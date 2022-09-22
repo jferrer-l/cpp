@@ -1,8 +1,8 @@
 NAME = exec
 
-SRCS = main.cpp AMateria.cpp Charcter.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-HEADER = AMateria.hpp Charcter.hpp Cure.hpp Ice.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
+HEADER = AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
 CC = clang++
 RM = rm -f
 CFLAGS = -W -Wall -Werror -std=c++98 -MMD

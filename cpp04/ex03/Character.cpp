@@ -70,6 +70,14 @@ void	Character::equip(AMateria* materia)
 			break;
 		}
 	}
+	/*
+	int i = 0;
+
+	for (i = 0; i < 4 && this->_inv[i] != NULL; i++);
+
+	if (i < 4)
+		this->_inv[i] = m;
+		*/
 }
 
 void	Character::unequip(int index)

@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 04:52:34 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/21 05:20:23 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:22:37 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define IMATERIASOURCE_HPP
 
 #include <iostream>
-#include "AMateria.hpp"
+
+class Amateria;
+
 
 class IMateriaSource
 {

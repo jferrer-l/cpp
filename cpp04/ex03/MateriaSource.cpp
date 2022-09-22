@@ -6,11 +6,13 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 04:54:56 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/21 05:17:32 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:55:20 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
+#include "AMateria.hpp"
+#include "string"
 
 MateriaSource::MateriaSource()
 {
@@ -58,7 +60,7 @@ void MateriaSource::learnMateria(AMateria* newmateria)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->slots[i] != NULL)
+		if (this->slots[i] == NULL)
 		{
 			this->slots[i] = newmateria;
 			break;
@@ -69,9 +71,7 @@ void MateriaSource::learnMateria(AMateria* newmateria)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
-	{
-		if (this->slots[i]->getType() == type && this->slots[i] != NULL)
+		if (this->slots[i] != NULL && this->slots[i]->getType() == type)
 			return (this->slots[i]->clone());
-	}
 	return (0);
 }

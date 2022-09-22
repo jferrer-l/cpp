@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:43:04 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/21 05:24:38 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:40:12 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,14 @@ AMateria & AMateria::operator=(const AMateria& op)
 		return (*this);
 	//this->type = op.type;
 	return (*this);
+}
+
+std::string const & AMateria::getType() const
+{
+	return (this->type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
 }
