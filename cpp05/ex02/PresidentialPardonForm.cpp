@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:53:17 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 09:23:43 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/22 11:53:47 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-//PresidentialPardonForm::~PresidentialPardonForm(){}
+PresidentialPardonForm::~PresidentialPardonForm(){}
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target): AForm("default_name", 25, 5), target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target): AForm("presidential", 25, 5), target(target)
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & copy): AForm(copy), target(copy.target)
@@ -30,6 +30,32 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 	this->target = op.target;
 	return *this;
 }
+
+void PresidentialPardonForm::executor() const
+{
+	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox\n";
+}
+
+// const std::string & PresidentialPardonForm::getName() const
+// {
+// 	std::string* temp = new std::string("no va");
+// 	return (*temp);
+// }
+
+// bool PresidentialPardonForm::getSign() const
+// {
+// 	return true;
+// }
+
+// int PresidentialPardonForm::getSignGrade() const
+// {
+// 	return 25;
+// }
+
+// int PresidentialPardonForm::getExecuteGrade() const
+// {
+// 	return 5;
+// }
 
 // const std::string & PresidentialPardonForm::getName() const
 // {
@@ -66,12 +92,12 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 // 	return out;
 // }
 
-void	beSigned(Bureaucrat const & bur)
-{
-	(void)bur;
-}
+// void	beSigned(Bureaucrat const & bur)
+// {
+// 	(void)bur;
+// }
 
-void	execute(Bureaucrat const & executor)
-{
-	(void)executor;
-}
+// void	execute(Bureaucrat const & executor)
+// {
+// 	(void)executor;
+// }

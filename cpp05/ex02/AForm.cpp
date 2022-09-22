@@ -34,25 +34,25 @@ AForm & AForm::operator=(const AForm & op)
 	return *this;
 }
 
-// const std::string & AForm::getName() const
-// {
-// 	return (this->name);
-// }
+const std::string & AForm::getName() const
+{
+	return (this->name);
+}
 
-// bool AForm::getSign() const
-// {
-// 	return (this->sign);
-// }
+bool AForm::getSign() const
+{
+	return (this->sign);
+}
 
-// int	AForm::getSignGrade() const
-// {
-// 	return (this->sign_grade);
-// }
+int	AForm::getSignGrade() const
+{
+	return (this->sign_grade);
+}
 
-// int	AForm::getExecuteGrade() const
-// {
-// 	return (this->execute_grade);
-// }
+int	AForm::getExecuteGrade() const
+{
+	return (this->execute_grade);
+}
 
 void AForm::beSigned(const Bureaucrat& bur)
 {
@@ -62,12 +62,14 @@ void AForm::beSigned(const Bureaucrat& bur)
 	this->sign = true;
 }
 
-void AForm::execute(const Bureaucrat& bur)
+void AForm::execute(const Bureaucrat& bur) const
 {
-	bur.signForm(*this);
-	if (bur.getGrade() > this->sign_grade)
+	bur.executeForm(*this);
+	if (this->sign == false)
+		throw AForm::AFormNotSignedException();
+	if (bur.getGrade() > this->execute_grade)
 		throw AForm::GradeTooLowException();
-	this->sign = true;
+	executor();
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm & B)

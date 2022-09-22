@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:53:19 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 09:27:34 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:01:14 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,44 +30,7 @@ class PresidentialPardonForm: public AForm
 	PresidentialPardonForm(const PresidentialPardonForm &);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &);
 
-	const std::string & getName() const
-	{
-		std::string* temp = new std::string("");
-		return *temp;
-	}
-
-	bool		getSign() const
-	{
-		return true;
-	}
-
-	int			getSignGrade() const
-	{
-		return 25;
-	}
-
-	int			getExecuteGrade() const
-	{
-		return 5;
-	}
-
-	// void		beSigned(Bureaucrat const & bur);
-
-	// class GradeTooHighException: public std::exception
-	// {
-	// 	virtual const char* what() const throw()
-	// 	{
-	// 		return ("Expected a grade equal or lower than 1");
-	// 	}
-	// };
-
-	// class GradeTooLowException: public std::exception
-	// {
-	// 	virtual const char* what() const throw()
-	// 	{
-	// 		return ("Expected a grade equal or higher than 150");
-	// 	}
-	// };
+	void	executor() const;
 };
 
 // std::ostream& operator<<(std::ostream&, PresidentialPardonForm const&);

@@ -32,13 +32,15 @@ class AForm
 	AForm(const AForm &);
 	AForm &operator=(const AForm &);
 
-	virtual const std::string & getName() const = 0;
-	virtual bool		getSign() const = 0;
-	virtual int			getSignGrade() const = 0;
-	virtual int			getExecuteGrade() const = 0;
+	const std::string & getName() const;
+	bool		getSign() const;
+	int			getSignGrade() const;
+	int			getExecuteGrade() const;
 
-	virtual void	beSigned(Bureaucrat const & bur);
-	virtual void	execute(Bureaucrat const & executor);
+	void	beSigned(Bureaucrat const&);
+	void	execute(Bureaucrat const&) const;
+
+	virtual void	executor() const = 0;
 
 	class GradeTooHighException: public std::exception
 	{
@@ -53,6 +55,14 @@ class AForm
 		virtual const char* what() const throw()
 		{
 			return ("Expected a grade equal or higher than 150");
+		}
+	};
+
+	class AFormNotSignedException: public std::exception
+	{
+		virtual const char* what() const throw()
+		{
+			return ("The AForm has to be signed before using execute");
 		}
 	};
 };

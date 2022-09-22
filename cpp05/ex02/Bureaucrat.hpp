@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 03:27:57 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 07:53:31 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:51:30 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat
 	void		decreaseGrade();
 
 	void		signForm(AForm&) const;
+	void		executeForm(AForm const&) const;
 
 	class GradeTooHighException: public std::exception
 	{
