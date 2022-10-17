@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:53:21 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 12:10:00 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:25:52 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 	return *this;
 }
 
-void RobotomyRequestForm::executor() const
+void RobotomyRequestForm::executor(Bureaucrat const & executor) const
 {
 	std::srand(std::time(nullptr));
 	int rand = std::rand();
+	if (!this->canBeExecuted(executor))
+		return ;
 	std::cout << "* Drilling Noises *\n";
 	if (rand % 2)
 		std::cout << this->target << " has been robotomized successfully.\n";

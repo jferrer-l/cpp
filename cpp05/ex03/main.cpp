@@ -6,49 +6,51 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 03:28:05 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/29 12:01:43 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:28:18 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <stdexcept>
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
+#include "AForm.hpp"
 
-int main()
+int	main(void)
 {
-	{
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("presidential", "Bender1");
-		std::cout << rrf->getName() << std::endl;
-		rrf->executor();
-		rrf = someRandomIntern.makeForm("presidential wrong name", "Benders11");
-	}
-	std::cout << std::endl;
-	{
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy", "Bender2");
-		std::cout << rrf->getName() << std::endl;
-		rrf->executor();
-		rrf = someRandomIntern.makeForm("robotomy wrong name", "Benders22");
-	}
-	std::cout << std::endl;
-	{
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("shrubbery", "Bender3");
-		std::cout << rrf->getName() << std::endl;
-		rrf->executor();
-		rrf = someRandomIntern.makeForm("shrubbery wrong name", "Benders33");
-	}
-	std::cout << std::endl;
+	srand(time(NULL));
+	Intern someIntern;
 
+	Bureaucrat supervisor("Supervisor", 1);
+	Bureaucrat francis("Francis", 25);
 
+	AForm *shrub = someIntern.makeForm("shrubbery", "home");
+	shrub->beSigned(supervisor);
+	shrub->execute(francis);
+
+	AForm *pres = someIntern.makeForm("presidential", "Francis");
+	supervisor.signForm(*pres);
+	pres->execute(supervisor);
+
+	AForm *robot = someIntern.makeForm("robotomy", "Bender");
+	robot->beSigned(supervisor);
+	robot->execute(francis);
+	francis.executeForm(*robot);
+	francis.executeForm(*robot);
+
+	try
+	{
+		AForm *fake = someIntern.makeForm("fake request", "Bender");
+		delete fake;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	delete shrub;
+	delete pres;
+	delete robot;
 	return (0);
 }

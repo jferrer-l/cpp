@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:53:17 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 11:53:47 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:26:16 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 	return *this;
 }
 
-void PresidentialPardonForm::executor() const
+void PresidentialPardonForm::executor(Bureaucrat const & executor) const
 {
+	if (!this->canBeExecuted(executor))
+		return ;
 	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox\n";
 }
 

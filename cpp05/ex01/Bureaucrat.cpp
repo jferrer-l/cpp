@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 03:28:00 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 07:32:03 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:02:23 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void Bureaucrat::signForm(Form & form) const
 		std::cout << this->name << " couldn’t sign " <<  form.getName() << "because the bureaucrat grade wasn't high enought.\n";
 	else
 		std::cout << this->name << " signed " << form.getName() << std::endl;
+	form.beSigned(*this);
 }

@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 06:33:59 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 07:20:04 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:03:51 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Form::~Form(){}
 
 Form::Form(const std::string name, const int sign_grade, const int execute_grade): name(name), sign(false), sign_grade(sign_grade), execute_grade(execute_grade)
 {
+	//std::cout << sign_grade << " " << this->sign_grade << std::endl;
 	if (sign_grade < 1 || execute_grade < 1)
 		throw Form::GradeTooHighException();
 	else if (sign_grade > 150 || execute_grade > 150)
@@ -56,7 +57,6 @@ int	Form::getExecuteGrade() const
 
 void Form::beSigned(const Bureaucrat& bur)
 {
-	bur.signForm(*this);
 	if (bur.getGrade() > this->sign_grade)
 		throw Form::GradeTooLowException();
 	this->sign = true;

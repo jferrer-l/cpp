@@ -56,7 +56,6 @@ int	AForm::getExecuteGrade() const
 
 void AForm::beSigned(const Bureaucrat& bur)
 {
-	bur.signForm(*this);
 	if (bur.getGrade() > this->sign_grade)
 		throw AForm::GradeTooLowException();
 	this->sign = true;
@@ -64,16 +63,31 @@ void AForm::beSigned(const Bureaucrat& bur)
 
 void AForm::execute(const Bureaucrat& bur) const
 {
-	bur.executeForm(*this);
 	if (this->sign == false)
 		throw AForm::AFormNotSignedException();
 	if (bur.getGrade() > this->execute_grade)
 		throw AForm::GradeTooLowException();
-	executor();
+	executor(bur);
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm & B)
 {
 	out << B.getName() << ", AForm sign " << B.getSign() << ", AForm sign_grade " << B.getSignGrade() << ", AForm execute_sign " << B.getExecuteGrade() << '.';
 	return out;
+}
+
+bool	AForm::canBeExecuted(Bureaucrat const & executor) const
+{
+	if(!this->sign)
+	{
+		throw AForm::AFormNotSignedException();
+		return(false);
+	}
+	if (this->execute_grade >= executor.getGrade())
+		return(true);
+	else
+	{
+		throw AForm::GradeTooLowException();
+		return(false);
+	}
 }

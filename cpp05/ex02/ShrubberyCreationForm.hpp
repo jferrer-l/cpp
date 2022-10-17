@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:53:41 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 12:02:57 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:51:17 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ShrubberyCreationForm: public AForm
 	ShrubberyCreationForm(const ShrubberyCreationForm &);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
 
-	void	executor() const;
+	void	executor(Bureaucrat const &) const;
 };
 
 // std::ostream& operator<<(std::ostream&, ShrubberyCreationForm const&);

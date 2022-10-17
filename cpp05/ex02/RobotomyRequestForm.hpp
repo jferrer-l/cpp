@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:53:36 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/09/22 12:02:25 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:51:28 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm: public AForm
 	RobotomyRequestForm(const RobotomyRequestForm &);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &);
 
-	void	executor() const;
+	void	executor(Bureaucrat const &) const;
 };
 
 // std::ostream& operator<<(std::ostream&, RobotomyRequestForm const&);
