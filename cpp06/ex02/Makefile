@@ -1,8 +1,8 @@
-NAME = convert
+NAME = exec
 
-SRCS = main.cpp
+SRCS = main.cpp A.cpp B.cpp C.cpp Base.cpp
 
-HEADER = Data.hpp
+HEADER = Base.hpp A.hpp B.hpp C.hpp
 CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD

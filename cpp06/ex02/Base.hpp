@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 18:11:50 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/10/13 18:12:35 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/11/03 17:37:43 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/11/04 16:36:03 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATIONS_HPP
-#define OPERATIONS_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
 
-
+class Base
+{
+	public:
+	virtual ~Base();
+};
 
 #endif

@@ -5,38 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 19:08:51 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/10/19 00:19:42 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/11/01 17:01:03 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/11/01 17:13:14 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdint>
 #include <iostream>
-#include <sstream>
-#include <string>
-#include "Convert.hpp"
+#include "Data.hpp"
 
-int main(int argc, char **argv)
+uintptr_t serialize(Data* ptr)
 {
-	int i;
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
 
-	if (argc != 2)
-	{
-		std::cout << "Invalid number of arguments\n";
-		return (-1);
-	}
-	std::string str = argv[1];
-	try
-	{
-		Convert hol(str);
-		Convert conv(hol);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+Data* deserialize(uintptr_t raw)
+{
+	return (reinterpret_cast<Data*>(raw));
+}
 
-	(void)i;
-	(void)argc;
-	(void)argv;
-	return (0);
+int main()
+{
+	Data temp;
+	temp.age = 42;
+	temp.name = "Ramiro Fernandez de la Fuente Tercero";
+
+	uintptr_t ptr = serialize(&temp);
+
+	Data *temp2 = deserialize(ptr);
+
+	std::cout << temp2->age << std::endl;
+	std::cout << temp2->name << std::endl;
+
 }

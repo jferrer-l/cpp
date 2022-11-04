@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 18:03:21 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/11/01 17:04:58 by jferrer-         ###   ########.fr       */
+/*   Created: 2022/11/03 17:37:45 by jferrer-          #+#    #+#             */
+/*   Updated: 2022/11/03 17:45:58 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef C_HPP
+#define C_HPP
 
-#include <string>
+#include "Base.hpp"
 
-typedef struct	s_Data
+class C: public Base
 {
-	std::string name;
-	int age;
-}				Data;
+	public:
+	C();
+	~C();
+};
 
 #endif
