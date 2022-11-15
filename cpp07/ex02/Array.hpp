@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:44:42 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/11/14 23:27:42 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:51:27 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Array
 
 	public:
 	Array(): array(NULL), _size(0){}
-	~Array(){ /*delete(this->array);*/ }
+	~Array(){ delete[] this->array; }
 	Array(const Array &op): _size(op._size)
 	{
 		this->array = new T[op._size];
@@ -37,7 +37,7 @@ class Array
 		if (&op == this)
 			return *this;
 		if (this->array)
-			delete(this->array);
+			delete[] this->array;
 		this->array = new T[op._size];
 		this->_size = op._size;
 		for (unsigned int i = 0; i < this->_size; i++)
