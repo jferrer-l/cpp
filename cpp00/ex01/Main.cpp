@@ -6,7 +6,7 @@
 /*   By: jferrer- <jferrer-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:51:06 by jferrer-          #+#    #+#             */
-/*   Updated: 2022/08/13 21:00:14 by jferrer-         ###   ########.fr       */
+/*   Updated: 2022/11/16 02:04:18 by jferrer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int main(void)
 	while (input != "EXIT")
 	{
 		std::cout << '>';
-		std::getline(std::cin, input);
+		if (std::getline(std::cin, input).rdstate() != 0)
+			exit (-1);
 		if (input == "ADD")
 			new_contact(&p_list);
 		else if (input == "SEARCH")
@@ -130,7 +131,8 @@ static void	new_contact(PhoneBook *p_list)
 			std::cout << "Introduce the contact darkest secret:";
 			break;
 		}
-		std::getline(std::cin, vars[i]);
+		if (std::getline(std::cin, vars[i]).rdstate() != 0)
+			exit (-1);
 		if ((i != 3 || is_digits(vars[i])) && vars[i] != "")
 			i++;
 		else
