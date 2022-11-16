@@ -2,7 +2,7 @@ NAME = exec
 
 SRCS = main.cpp
 
-HEADER = Array.tpp
+HEADER = Array.hpp
 CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
